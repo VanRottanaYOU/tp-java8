@@ -15,7 +15,7 @@ import java.util.List;
 public class Lambda_01_Test {
 
     // tag::PersonPredicate[]
-    interface PersonPredicate {
+    public interface PersonPredicate {
         boolean test(Person p);
     }
     // end::PersonPredicate[]

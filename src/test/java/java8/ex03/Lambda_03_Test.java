@@ -4,6 +4,7 @@ import java8.data.Data;
 import java8.data.Person;
 import org.junit.Test;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -19,7 +20,10 @@ public class Lambda_03_Test {
 
     // tag::forEach[]
     private void forEach(List<Person> source, PersonProcessor processor) {
-       // TOD0
+    	List<PersonProcessor> a = new ArrayList<PersonProcessor>();
+    	for (Person p : source) {   
+    		processor.process(p);
+        }
     }
     // end::forEach[]
 
@@ -34,8 +38,10 @@ public class Lambda_03_Test {
         // TODO vérifier qu'une personne à un nom qui commence par last
         // TODO vérifier qu'une personne à un age > 0
         // TODO la vérification se fait via une assertion (mot clé assert)
-        PersonProcessor verifyPerson = null;
 
+        //PersonProcessor verifyPerson = p -> {if (p.getFirstname().startsWith("first")) System.out.println("OK");};
+        //PersonProcessor verifyPerson = p -> {if (p.getFirstname().startsWith("last")) System.out.println("OK");};
+        PersonProcessor verifyPerson = p -> {if (p.getAge()>0) System.out.println("OK");};
         assert verifyPerson != null;
 
         forEach(personList, verifyPerson);
