@@ -13,7 +13,7 @@ import java.util.List;
 public class Lambda_03_Test {
 
     // tag::PersonProcessor[]
-    interface PersonProcessor {
+    public interface PersonProcessor {
         void process(Person p);
     }
     // end::PersonProcessor[]
